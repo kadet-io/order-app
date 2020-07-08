@@ -10,21 +10,21 @@ export class OrderService {
     }
 
      createCustomerTable() {
-        if(!  this.knex.schema.hasTable('User')) {
-             this.knex.schema.createTable('User', user=> {
-                user.increments('customer_id').primary();
-                user.string('firstName')
-                user.string('lastName')
-                user.string('Address')
-                user.integer('mobile')
-                user.string('email')
+        if(!  this.knex.schema.hasTable('customerTable')) {
+             this.knex.schema.createTable('customerTable', customer=> {
+                customer.increments('customer_id').primary();
+                customer.string('firstName')
+                customer.string('lastName')
+                customer.string('Address')
+                customer.integer('mobile')
+                customer.string('email')
             })
         }
     }
 
     createVendorTable() {
-        if(!  this.knex.schema.hasTable('Vendor')){
-             this.knex.schema.createTable('Vendor', vendor=> {
+        if(!  this.knex.schema.hasTable('vendorTable')){
+             this.knex.schema.createTable('vendorTable', vendor=> {
                 vendor.increments('vendor_id').primary();
                 vendor.string('firstName')
                 vendor.string('lastName')
